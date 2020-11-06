@@ -1,0 +1,36 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the theGreatXor function below.
+def theGreatXor(x):
+    r=0
+    b=x>>1
+    pc=2
+    while(b>0):
+        c=b&1
+        if(c==0):
+            r+=pc
+        b>>=1
+        pc*=2
+    if x%2==0:
+        r+=1
+    return r
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    q = int(input())
+
+    for q_itr in range(q):
+        x = int(input())
+
+        result = theGreatXor(x)
+
+        fptr.write(str(result) + '\n')
+
+    fptr.close()
