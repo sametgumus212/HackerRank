@@ -1,0 +1,14 @@
+import sys
+n=int(sys.stdin.readline().strip())
+pb=dict()
+for i in range(n):
+    e=sys.stdin.readline().strip().split(' ')
+    pb[e[0]]=e[1]
+q=sys.stdin.readline().strip()
+while q:
+    pn=pb.get(q)
+    if pn:
+        print(q+'='+pn)
+    else:
+        print('Not found')
+    q=sys.stdin.readline().strip()
